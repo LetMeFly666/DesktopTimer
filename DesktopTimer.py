@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-09-13 09:17:12
 LastEditors: LetMeFly
-LastEditTime: 2022-09-13 11:08:20
+LastEditTime: 2022-10-01 20:03:45
 '''
 import sys
 import time
@@ -96,6 +96,7 @@ class Main(QWidget):
                     startpauseAction = menu.addAction("Start")
             menu.addSeparator()
             aboutAction = menu.addAction("About")
+            websiteAction = menu.addAction("Website")
             quitAction = menu.addAction("Exit")
             action = menu.exec_(self.mapToGlobal(e.pos()))
             if action == startpauseAction:
@@ -112,6 +113,8 @@ class Main(QWidget):
                 selected = QMessageBox.question(self, "About", self.about, QMessageBox.Yes | QMessageBox.Cancel)
                 if selected == QMessageBox.Yes:
                     webbrowser.open('https://letmefly.xyz/?from=MyTimer', new=0, autoraise=True)
+            if action == websiteAction:
+                webbrowser.open('https://desktoptimer.letmefly.xyz/?from=DesktopTimerApp', new=0, autoraise=True)
 
 
 if __name__ == "__main__":
