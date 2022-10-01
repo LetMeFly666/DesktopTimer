@@ -2,7 +2,7 @@
 Author: LetMeFly
 Date: 2022-09-13 09:17:12
 LastEditors: LetMeFly
-LastEditTime: 2022-10-01 20:03:45
+LastEditTime: 2022-10-01 20:22:26
 '''
 import sys
 import time
@@ -107,6 +107,8 @@ class Main(QWidget):
                     self._lastTime = time.time()
             if action == clearAction:
                 self._nowCount = 0
+                print("reset to zero")
+                print("The left click after a right click will also be recognized as a clearAction.\nI don't know if it is a BUG.")
             if action == quitAction:
                 qApp.quit()
             if action == aboutAction:
